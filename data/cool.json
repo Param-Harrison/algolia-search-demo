@@ -1,0 +1,40 @@
+{
+  "collections": [
+    {
+      "name": "FinTech",
+      "image": ""
+    },
+    {
+      "name": "Gaming",
+      "image": ""
+    },
+    {
+      "name": "Healthcare",
+      "image": ""
+    },
+    {
+      "name": "Hong Kong",
+      "image": ""
+    },
+    {
+      "name": "Australia",
+      "image": ""
+    },
+    {
+      "name": "Beautiful Beaches",
+      "image": ""
+    },
+    {
+      "name": "Backend Development",
+      "image": ""
+    },
+    {
+      "name": "Frontend Development",
+      "image": ""
+    },
+    {
+      "name": "Business Development",
+      "image": ""
+    }
+  ]
+}
