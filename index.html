@@ -23,34 +23,54 @@
 var client = algoliasearch('UKVBMH86N3', '148212434fd1041937e09ef1e138b718');
 var skills = client.initIndex('skills');
 var collections = client.initIndex('collections');
+var jobs = client.initIndex('jobs');
+var locations = client.initIndex('locations');
 
 autocomplete('#aa-search-input', {debug: true}, [
-    {
-      source: autocomplete.sources.hits(skills, { hitsPerPage: 7 }),
-      displayKey: 'name',
-      templates: {
-        header: '<div class="aa-suggestions-category">Skills</div>',
-        suggestion: function(suggestion) {
-          console.log(suggestion);
-          return '<span>' +
-            suggestion._highlightResult.name.value + '</span><span>';
-        },
-        empty: '<div class="aa-empty">No matching skills</div>'
-      }
+  {
+    source: autocomplete.sources.hits(jobs, { hitsPerPage: 7 }),
+    displayKey: function(display) {
+      return display.data.jobTitle;
     },
-    {
-      source: autocomplete.sources.hits(collections, { hitsPerPage: 5 }),
-      displayKey: 'name',
-      templates: {
-        header: '<div class="aa-suggestions-category">Collections</div>',
-        suggestion: function(suggestion) {
-          console.log(suggestion);
-          return '<img src="' + suggestion.image + '">' + '<div><span>' +
-            suggestion._highlightResult.name.value + '</span><span>';
-        },
-        empty: '<div class="aa-empty">No matching collections</div>'
+    templates: {
+      header: '<div class="aa-suggestions-category">Jobs</div>',
+      suggestion: function(suggestion) {
+        return '<span>' + suggestion._highlightResult.data.jobTitle.value + '</span>';
       }
     }
+  },
+  {
+    source: autocomplete.sources.hits(locations, { hitsPerPage: 3 }),
+    displayKey: 'city',
+    templates: {
+      header: '<div class="aa-suggestions-category">Locations</div>',
+      suggestion: function(suggestion) {
+          return '<span>' +
+            suggestion._highlightResult.city.value + '</span><span>'
+              + suggestion._highlightResult.country.value + '</span>';
+        }
+    }
+  },
+  {
+    source: autocomplete.sources.hits(skills, { hitsPerPage: 5 }),
+    displayKey: 'name',
+    templates: {
+      header: '<div class="aa-suggestions-category">Skills</div>',
+      suggestion: function(suggestion) {
+        return '<span>' + suggestion._highlightResult.name.value + '</span>';
+      }
+    }
+  },
+  {
+    source: autocomplete.sources.hits(collections, { hitsPerPage: 2 }),
+    displayKey: 'name',
+    templates: {
+      header: '<div class="aa-suggestions-category">Collections</div>',
+      suggestion: function(suggestion) {
+        return '<span>' + suggestion._highlightResult.name.value + '</span>';
+      }
+    }
+  }
 ]);
 </script>
 </body>
