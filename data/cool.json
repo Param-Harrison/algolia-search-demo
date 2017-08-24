@@ -2,39 +2,39 @@
   "collections": [
     {
       "name": "FinTech",
-      "image": ""
+      "image": "https://raw.githubusercontent.com/Param-Harrison/algolia-search-demo/master/design/fintech.jpg"
     },
     {
       "name": "Gaming",
-      "image": ""
+      "image": "https://raw.githubusercontent.com/Param-Harrison/algolia-search-demo/master/design/gaming.jpg"
     },
     {
       "name": "Healthcare",
-      "image": ""
+      "image": "https://raw.githubusercontent.com/Param-Harrison/algolia-search-demo/master/design/science_healthcare.jpg"
     },
     {
       "name": "Hong Kong",
-      "image": ""
+      "image": "https://raw.githubusercontent.com/Param-Harrison/algolia-search-demo/master/design/hong_kong.jpg"
     },
     {
       "name": "Australia",
-      "image": ""
+      "image": "https://raw.githubusercontent.com/Param-Harrison/algolia-search-demo/master/design/australia.jpg"
     },
     {
       "name": "Beautiful Beaches",
-      "image": ""
+      "image": "https://raw.githubusercontent.com/Param-Harrison/algolia-search-demo/master/design/back-end-dev.jpg"
     },
     {
       "name": "Backend Development",
-      "image": ""
+      "image": "https://raw.githubusercontent.com/Param-Harrison/algolia-search-demo/master/design/beach.jpg"
     },
     {
       "name": "Frontend Development",
-      "image": ""
+      "image": "https://raw.githubusercontent.com/Param-Harrison/algolia-search-demo/master/design/front-end-dev.jpg"
     },
     {
       "name": "Business Development",
-      "image": ""
+      "image": "https://raw.githubusercontent.com/Param-Harrison/algolia-search-demo/master/design/biz_dev.jpg"
     }
   ]
 }
