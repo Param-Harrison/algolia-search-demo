@@ -13,16 +13,16 @@
 </head>
 
 <body>
-<section class="jb-explore container clearfix">
-  <section class="jb-explore-search">
+<section class="jb-explore">
+  <section class="jb-explore-search container">
     <div class="clearfix">
       <form>
-        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 col-lg-offset-3 col-md-offset-2 col-sm-offset-1">
+        <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-1">
           <div class="input-group">
-            <input type="search" id="aa-search-input" autofocus="" autocomplete="off" class="form-control js-explore-search__input jb-explore-search__input" name="search" placeholder="job title, keyword, location" />
+            <input type="search" id="aa-search-input" autofocus="" autocomplete="off" class="form-control js-explore-search__input jb-explore-search__input" name="search" placeholder="job title, keywords, locations" />
             <i class="fa fa-fw fa-times-circle js-explore-search__remove" aria-hidden="true"></i>
             <span class="input-group-btn">
-              <button class="btn btn-success btn-lg btn-search"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;search</button>
+              <a class="btn btn-success btn-lg btn-search"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;Find jobs</a>
             </span>
           </div>
         </div>
@@ -30,6 +30,9 @@
     </div>
     <div class="text-center jb-explore-search__found add-bottom">
     </div>
+  </section>
+  <section class="container jb-search-image">
+    <img class="img-responsive" src="filters.png" />
   </section>
 </section>
 
@@ -55,7 +58,7 @@ autocomplete('#aa-search-input', {debug: true}, [
     templates: {
       header: '<div class="aa-suggestions-category">Jobs</div>',
       suggestion: function(suggestion) {
-        return '<span>' + suggestion._highlightResult.data.jobTitle.value + '</span>';
+        return '<span>' + suggestion._highlightResult.data.jobTitle.value + '</span><span></span>';
       }
     }
   },
@@ -77,17 +80,17 @@ autocomplete('#aa-search-input', {debug: true}, [
     templates: {
       header: '<div class="aa-suggestions-category">Skills</div>',
       suggestion: function(suggestion) {
-        return '<span>' + suggestion._highlightResult.name.value + '</span>';
+        return '<span>' + suggestion._highlightResult.name.value + '</span><span></span>';
       }
     }
   },
   {
-    source: autocomplete.sources.hits(collections, { hitsPerPage: 2 }),
+    source: autocomplete.sources.hits(collections, { hitsPerPage: 3 }),
     displayKey: 'name',
     templates: {
       header: '<div class="aa-suggestions-category">Collections</div>',
       suggestion: function(suggestion) {
-        return '<span>' + suggestion._highlightResult.name.value + '</span>';
+        return '<span>' + suggestion._highlightResult.name.value + '</span><span></span>';
       }
     }
   }
